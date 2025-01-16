@@ -1,0 +1,48 @@
+PS D:\a vasantdada> git init
+Initialized empty Git repository in D:/a vasantdada/.git/
+PS D:\a vasantdada> git add .
+PS D:\a vasantdada> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   html/basic.html
+        new file:   html/form.html
+        new file:   html/format.html
+        new file:   html/head.html
+        new file:   html/hyperlink.html
+        new file:   html/list.htm
+
+PS D:\a vasantdada> git config --global "vishalmejari15125@gmail.com"
+error: invalid key: vishalmejari15125@gmail.com
+PS D:\a vasantdada> git config --global user.email  "vishalmejari15125@gmail.com"
+PS D:\a vasantdada>  git commit -m "sending html code"
+[master (root-commit) b46e2c6] sending html code
+ 6 files changed, 102 insertions(+)
+ create mode 100644 html/basic.html
+ create mode 100644 html/form.html
+ create mode 100644 html/format.html
+ create mode 100644 html/head.html
+ create mode 100644 html/hyperlink.html
+ create mode 100644 html/list.htm
+PS D:\a vasantdada> git remote add origin https://github.com/VISHALMEJARI/html_programs.git
+PS D:\a vasantdada> git branch
+* master
+PS D:\a vasantdada> git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 1.50 KiB | 1.50 MiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/VISHALMEJARI/html_programs.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS D:\a vasantdada> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
