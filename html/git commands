@@ -14,9 +14,6 @@ Changes to be committed:
         new file:   html/head.html
         new file:   html/hyperlink.html
         new file:   html/list.htm
-
-PS D:\a vasantdada> git config --global "vishalmejari15125@gmail.com"
-error: invalid key: vishalmejari15125@gmail.com
 PS D:\a vasantdada> git config --global user.email  "vishalmejari15125@gmail.com"
 PS D:\a vasantdada>  git commit -m "sending html code"
 [master (root-commit) b46e2c6] sending html code
