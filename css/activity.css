@@ -1,0 +1,28 @@
+.container {
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    border: 5px solid #333;
+    margin: 20px;
+    background-color: lightblue;
+    position: relative;
+}
+
+.content {
+    background-color: lightcoral;
+    padding: 10px;
+    border: 2px dashed #ff6347;
+    margin-bottom: 20px;
+}
+
+.nested-box {
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+    border: 3px solid #4caf50;
+    text-align: center;
+    line-height: 80px;
+}
