@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Information Form</title>
+</head>
+<body>
+  <h1>Personal Information Summary</h1>
+  <p>The information entered in the form will be displayed below:</p>
+  <script>
+    var name = "Vishal"; // storing the name in name variable
+
+    var age = 20; // storing the age in age variable
+
+    var favoriteColor = "Blue"; // storing the fav color in favoriteColor variable
+
+    var hobbies = ["Coding", "Reading", "Gaming", "Traveling"]; // creating an array for storing hobbies
+
+    // storing all the variables to the console
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("Favorite Color:", favoriteColor);
+    console.log("Hobbies:", hobbies);
+
+    // Displaying the information on the webpage using document.write
+    document.write("<h2>Personal Information</h2>");
+    document.write("<p><strong>Name:</strong> " + name + "</p>");
+    document.write("<p><strong>Age:</strong> " + age + "</p>");
+    document.write("<p><strong>Favorite Color:</strong> " + favoriteColor + "</p>");
+
+    //using document.write and for loop for displaying hobbies
+    document.write("<p><strong>Hobbies:</strong></p>");
+    document.write("<ul>");
+    for (let i = 0; i < hobbies.length; i++) {
+      document.write("<li>" + hobbies[i] + "</li>");
+    }
+    document.write("</ul>");
+  </script>
+</body>
+</html>

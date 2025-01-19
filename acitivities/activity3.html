@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Syntax Demo</title>
+</head>
+<body>
+  <h1>Basic JavaScript Syntax</h1>
+  <p>Open the console to see the output, and check below for information displayed on the webpage.</p>
+
+  <script>
+    // Single-line comment: Declaring variables with different data types
+
+    // String variable to store a name
+    var name = "Vishal Mejari";
+
+    // Number variable to store age
+    var age = 20;
+
+    // Boolean variable to represent a logical value
+    var isStudent = true;
+
+    // Array to store a list of favorite hobbies
+    var hobbies = ["Reading", "Coding", "Gaming"];
+
+    // Object to represent a person with properties
+    var person = {
+      firstName: "Vishal",
+      lastName: "Mejari",
+      age: 20,
+      isStudent: true,
+    };
+
+    /* 
+      Multi-line comment:
+      Using different methods to output information
+      storing variables to the console
+      displaying content on the webpage using document.write
+    */
+
+    // Output to the console
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("Is Student:", isStudent);
+    console.log("Hobbies:", hobbies);
+
+    // Output to the webpage
+    document.write("<h2>JavaScript Syntax Demonstration</h2>");
+    document.write("<p><strong>Name:</strong> " + name + "</p>");
+    document.write("<p><strong>Age:</strong> " + age + "</p>");
+    document.write("<p><strong>Is Student:</strong> " + isStudent + "</p>");
+    document.write("<p><strong>Hobbies:</strong></p>");
+    document.write("<ul>");
+    for (var i = 0; i < hobbies.length; i++) {
+      document.write("<li>" + hobbies[i] + "</li>");
+    }
+    document.write("</ul>");
+
+  </script>
+</body>
+</html>
