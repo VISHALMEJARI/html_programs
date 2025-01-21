@@ -1,9 +1,9 @@
-import Test6 from './components/Test6'
+import UserList from './components/Act2'
 
 function App() {
   return (
       <div>
-        <Test6/>
+        <UserList/>
       </div>
   )
 }  
