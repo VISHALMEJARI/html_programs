@@ -1,16 +1,11 @@
-function App() {
+import Test from './components/test'
 
+function App() {
   return (
-    <div>
-      <marquee>
-        Welcome to vasantdada patil college of engineering
-      </marquee>
-      <h2>
-        This is jsx element
-      </h2>
-    </div>
-      
+      <div>
+        <Test/>
+      </div>
   )
-}
- 
-export default App
+}  
+
+export default App
