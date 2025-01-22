@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Test4(){
+function Test5(){
     let[counter,updateCounter]=useState(0)
     return(
         <div>
@@ -10,4 +10,4 @@ function Test4(){
         </div>
     )
 }
-export default Test4
+export default Test5
