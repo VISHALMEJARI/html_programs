@@ -13,11 +13,11 @@ function Login(){
     const handleSubmit=(event)=>{
         event.preventDefault();
     
-    if(username===""||password===""){
+    if(username==="" && password===""){
         setErrorMessage("please enter username & password")
     }
-    if(username==='shivam'||password==='shivam'){
-        console.log("Login is success")
+    else if(username==="Vishal Mejari" && password ==="12345"){
+        alert("Login is success")
     }
     else{
         setErrorMessage("Invalid username & password")
