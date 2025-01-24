@@ -1,0 +1,19 @@
+[
+    {
+        "id":1001,
+        "userName":"Vishal Mejari",
+        "userAddress":"Mumbai"
+    },
+
+    {
+        "id":1002,
+        "userName":"Shubham Yadav",
+        "userAddress":"Uttar Pradesh"
+    },
+
+    {
+        "id":1003,
+        "userName":"Ashish Dixit",
+        "userAddress":"Pondicherry"
+    }
+]

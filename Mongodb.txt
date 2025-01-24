@@ -1,0 +1,341 @@
+Microsoft Windows [Version 10.0.26120.2992]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Riya Bavdane>mongosh
+Current Mongosh Log ID: 6791e40b2c840aab65cb0ce1
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:          8.0.4
+Using Mongosh:          2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-01-23T12:05:52.501+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show databases;
+admin   40.00 KiB
+config  60.00 KiB
+local   72.00 KiB
+test> use vasantdada;
+switched to db vasantdada
+vasantdada> show databases;
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+vasantdada> db.createCollection("user")
+{ ok: 1 }
+vasantdada> show collections;
+user
+vasantdada> db.createCollection("emp")
+{ ok: 1 }
+vasantdada> show collections;
+emp
+user
+vasantdada> db
+vasantdada
+vasantdada> show collections;
+emp
+user
+vasantdada> db.user.insertOne9
+vasantdada.user.insertOne9
+vasantdada> db.user.insertOne9({"userId":101,"userName":"Vishal Mejari"});
+TypeError: db.user.insertOne9 is not a function
+vasantdada> db.user.insertOne({"userId":101,"userName":"Vishal Mejari"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6791e7352c840aab65cb0ce2')
+}
+vasantdada> db.user.insertOne({"userId":102,"userName":"Shubham Yadav"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6791e7482c840aab65cb0ce3')
+}
+vasantdada> db.user.insertOne({"userId":103,"userName":"Ashish Dixit"},{"userId":104,"userName":"Pranit Gharat"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6791e7e52c840aab65cb0ce4')
+}
+vasantdada> db.user.find();
+[
+  {
+    _id: ObjectId('6791e7352c840aab65cb0ce2'),
+    userId: 101,
+    userName: 'Vishal Mejari'
+  },
+  {
+    _id: ObjectId('6791e7482c840aab65cb0ce3'),
+    userId: 102,
+    userName: 'Shubham Yadav'
+  },
+  {
+    _id: ObjectId('6791e7e52c840aab65cb0ce4'),
+    userId: 103,
+    userName: 'Ashish Dixit'
+  }
+]
+vasantdada> db.user.insertMany({"userId":104,"userName":"Pranit Gharat"},{"userId":105,"userName":"Sahil Maurya"})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+vasantdada> db.user.insertMany([{"userId":104,"userName":"Pranit Gharat"},{"userId":105,"userName":"Sahil Maurya"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6791e8b62c840aab65cb0ce5'),
+    '1': ObjectId('6791e8b62c840aab65cb0ce6')
+  }
+}
+vasantdada> db.user.find();
+[
+  {
+    _id: ObjectId('6791e7352c840aab65cb0ce2'),
+    userId: 101,
+    userName: 'Vishal Mejari'
+  },
+  {
+    _id: ObjectId('6791e7482c840aab65cb0ce3'),
+    userId: 102,
+    userName: 'Shubham Yadav'
+  },
+  {
+    _id: ObjectId('6791e7e52c840aab65cb0ce4'),
+    userId: 103,
+    userName: 'Ashish Dixit'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce5'),
+    userId: 104,
+    userName: 'Pranit Gharat'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce6'),
+    userId: 105,
+    userName: 'Sahil Maurya'
+  }
+]
+vasantdada> db.user.insert([{"userId":106,"userName":"Ameya Pacharkar"},{"userId":107,"userName":"Om Jaiswal"},{"userId":108,"userName":"Devansh"}])
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6791e9c42c840aab65cb0ce7'),
+    '1': ObjectId('6791e9c42c840aab65cb0ce8'),
+    '2': ObjectId('6791e9c42c840aab65cb0ce9')
+  }
+}
+vasantdada> db.user.insertOne({"userAddress":"Mumbai"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6791e9eb2c840aab65cb0cea')
+}
+vasantdada> db.user.find();
+[
+  {
+    _id: ObjectId('6791e7352c840aab65cb0ce2'),
+    userId: 101,
+    userName: 'Vishal Mejari'
+  },
+  {
+    _id: ObjectId('6791e7482c840aab65cb0ce3'),
+    userId: 102,
+    userName: 'Shubham Yadav'
+  },
+  {
+    _id: ObjectId('6791e7e52c840aab65cb0ce4'),
+    userId: 103,
+    userName: 'Ashish Dixit'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce5'),
+    userId: 104,
+    userName: 'Pranit Gharat'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce6'),
+    userId: 105,
+    userName: 'Sahil Maurya'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce7'),
+    userId: 106,
+    userName: 'Ameya Pacharkar'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce8'),
+    userId: 107,
+    userName: 'Om Jaiswal'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce9'),
+    userId: 108,
+    userName: 'Devansh'
+  },
+  { _id: ObjectId('6791e9eb2c840aab65cb0cea'), userAddress: 'Mumbai' }
+]
+vasantdada> db.user.findone();
+TypeError: db.user.findone is not a function
+vasantdada> db.user.findOne();
+{
+  _id: ObjectId('6791e7352c840aab65cb0ce2'),
+  userId: 101,
+  userName: 'Vishal Mejari'
+}
+vasantdada> db.user.find({"userId":106})
+[
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce7'),
+    userId: 106,
+    userName: 'Ameya Pacharkar'
+  }
+]
+vasantdada> db.user.updateOne({"userId":101},{$set:{"userName":"Vishal Ganesh Mejari"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+vasantdada> db.user.insertOne({"userId":101,"userName":"Vishal Mejari"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6791ec672c840aab65cb0ceb')
+}
+vasantdada> db.user.find();
+[
+  {
+    _id: ObjectId('6791e7352c840aab65cb0ce2'),
+    userId: 101,
+    userName: 'Vishal Ganesh Mejari'
+  },
+  {
+    _id: ObjectId('6791e7482c840aab65cb0ce3'),
+    userId: 102,
+    userName: 'Shubham Yadav'
+  },
+  {
+    _id: ObjectId('6791e7e52c840aab65cb0ce4'),
+    userId: 103,
+    userName: 'Ashish Dixit'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce5'),
+    userId: 104,
+    userName: 'Pranit Gharat'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce6'),
+    userId: 105,
+    userName: 'Sahil Maurya'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce7'),
+    userId: 106,
+    userName: 'Ameya Pacharkar'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce8'),
+    userId: 107,
+    userName: 'Om Jaiswal'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce9'),
+    userId: 108,
+    userName: 'Devansh'
+  },
+  { _id: ObjectId('6791e9eb2c840aab65cb0cea'), userAddress: 'Mumbai' },
+  {
+    _id: ObjectId('6791ec672c840aab65cb0ceb'),
+    userId: 101,
+    userName: 'Vishal Mejari'
+  }
+]
+vasantdada> db.user.updateMany({"userId":101},{$set:{"userName":"Vishal"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+vasantdada> db.user.deleteOne({_id: ObjectId('6791e9c42c840aab65cb0ce9')})
+{ acknowledged: true, deletedCount: 1 }
+vasantdada> db.user.find();
+[
+  {
+    _id: ObjectId('6791e7352c840aab65cb0ce2'),
+    userId: 101,
+    userName: 'Vishal'
+  },
+  {
+    _id: ObjectId('6791e7482c840aab65cb0ce3'),
+    userId: 102,
+    userName: 'Shubham Yadav'
+  },
+  {
+    _id: ObjectId('6791e7e52c840aab65cb0ce4'),
+    userId: 103,
+    userName: 'Ashish Dixit'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce5'),
+    userId: 104,
+    userName: 'Pranit Gharat'
+  },
+  {
+    _id: ObjectId('6791e8b62c840aab65cb0ce6'),
+    userId: 105,
+    userName: 'Sahil Maurya'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce7'),
+    userId: 106,
+    userName: 'Ameya Pacharkar'
+  },
+  {
+    _id: ObjectId('6791e9c42c840aab65cb0ce8'),
+    userId: 107,
+    userName: 'Om Jaiswal'
+  },
+  { _id: ObjectId('6791e9eb2c840aab65cb0cea'), userAddress: 'Mumbai' },
+  {
+    _id: ObjectId('6791ec672c840aab65cb0ceb'),
+    userId: 101,
+    userName: 'Vishal'
+  }
+]
+vasantdada> db.user.deleteMany({})
+{ acknowledged: true, deletedCount: 9 }
+vasantdada> db.user.find();
+
+vasantdada>
+
+
+COMMANDS:-
+mongosh
+
+use vasantdada
+
+show databases
+db.createCollection("user")
+show collections
+db.createCollection("emp")
+show collections
+db.user.insertOne({"userId":101,"userName":"Vishal Mejari"})
+db.user.insertOne({"userId":102,"userName":"Shubham Yadav"})
+db.user.insertOne({"userId":103,"userName":"Ashish Dixit"})
+db.user.insertMany([{"userId":104,"userName":"Pranit Gharat"},{"userId":105,"userName":"Sahil Maurya"}])
+db.user.find()
+db.user.insert([{"userId":106,"userName":"Ameya Pacharkar"},{"userId":107,"userName":"Om Jaiswal"},{"userId":108,"userName":"Devansh"}])
+db.user.insertOne({"userAddress":"Mumbai"})
+db.user.find()
+db.user.findOne()
+db.user.find({"userId":106})
+db.user.updateOne({"userId":101},{$set:{"userName":"Vishal Ganesh Mejari"}})
+db.user.insertOne({"userId":101,"userName":"Vishal Mejari"})
+db.user.find()
+db.user.updateMany({"userId":101},{$set:{"userName":"Vishal"}})
+db.user.deleteOne({_id: ObjectId('6791e9c42c840aab65cb0ce9')})
+db.user.find()
+db.user.deleteMany({})
+db.user.find()
